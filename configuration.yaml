@@ -2,8 +2,7 @@ homeassistant:
   name: Home
   unit_system: metric
   time_zone: Europe/Rome
-  auth_providers:
-    - type: legacy_api_password
+
 mqtt:
   broker: 192.168.0.88
   username: homeassistant

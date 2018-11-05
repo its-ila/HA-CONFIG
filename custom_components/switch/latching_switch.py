@@ -59,8 +59,8 @@ class LatchingSwitch(ToggleEntity):
 
 	def change_output(self, newstate):
 		if newstate != self._state:
+			self._state = not self._state
 			rpi_gpio.write_output(self._port, 1)
 			time.sleep(.2)
 			rpi_gpio.write_output(self._port, 0)
-			self._state = not self._state
 		self.schedule_update_ha_state()
